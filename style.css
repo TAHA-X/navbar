@@ -1,0 +1,91 @@
+*{
+    margin:0; padding:0; box-sizing:border-box;
+}
+body{
+    background-image: linear-gradient(90deg,rgb(0, 0, 0),blue) !important;
+    padding-top:30px;
+}
+/* navbar */
+nav{
+    display:flex; justify-content:space-between; align-items:center;
+    height:50px; 
+    line-height:50px; font-family:Arial, Helvetica, sans-serif;
+    border-bottom:2px solid white; width:80% !important;
+    margin:auto;
+}
+nav h2{
+    font-weight:bolder; 
+}
+nav ul li{
+    float:left; margin-right:35px; list-style-type:none;
+}
+nav ul li a{
+    color:white; text-decoration:none; transition:0.4s all;
+    position: relative; padding:4px 8.7px;
+}
+nav ul li a:hover{
+    color:rgb(255, 255, 255) !important; background-color:rgb(255, 0, 0);
+}
+nav ul li a:before{
+   content:""; position:absolute; top:0; left:-10%; width:0px; height:100%; border-right:2.5px solid red;
+    z-index:-1; transition:0.4s all;
+}
+nav ul li a:hover:before{
+    width:120%; 
+}
+#hide_ul{
+    display:none; transition:0.5s all;
+}
+#list{
+    display:none;
+}
+@media (max-width:1100px){
+    nav {
+        width:100% !important; padding:0px 20px; 
+    }
+    ul{
+        position:fixed; right:-60%; top:0; width:30%;
+        display:flex; flex-direction:column;
+        justify-content:center; 
+        align-items:center;
+        background-color:rgb(0, 0, 0);
+        height:100vh; transition:0.5s all;  
+    }
+    ul li a{
+        color:rgb(255, 255, 255) !important;
+    }
+    nav ul li button{
+        width:150px;
+    }
+    #list{
+        display:block;
+    }
+    #hide_ul{
+        cursor:pointer;
+    }
+}
+@media (max-width:800px){
+    ul{
+       width:50%;
+    }
+}
+/* email form(subscribe) */
+#show_email{
+    width:80%; height:220px; position:absolute;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    color:rgb(255, 255, 255); text-align:center;
+    display:flex; flex-direction:column;
+    justify-content:center; padding:15px; border-radius:20px;
+    background-image:linear-gradient(90deg,blue,rgb(0, 0, 0)); 
+    display:none; transition:0.4s all;
+}
+/* contact form */
+#contact_form{
+    width:80%; height:400px; position:absolute;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    color:rgb(255, 255, 255); text-align:center;
+    display:flex; flex-direction:column;
+    justify-content:center; padding:15px; border-radius:20px;
+    background-image:linear-gradient(90deg,blue,rgb(0, 0, 0)); 
+    display:none; transition:0.4s all;
+}
